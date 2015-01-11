@@ -1,0 +1,40 @@
+<ion-view view-title="Expense List">
+  <ion-content padding="true">
+  
+  <div class="item item-input item-select">
+    <div class="input-label">
+      Expense Sheet
+    </div>	
+	
+	<select ng-model="data.sheet_id" ng-options="sheet.id as sheet.name for sheet in sheets">
+	<option value="">-- choose sheet --</option>
+	</select>
+</div> 
+  
+    
+  
+  
+  <div class="row" ng-class-odd="'col-odd'" ng-class-even="'col-even'" ng-repeat="expense_rpt in expenses_rpt">
+          <div class="col">
+            {{expense_rpt.date | date:'MM/dd' }}
+          </div>
+          <div class="col col-50">
+            {{ expense_rpt.category_name}}
+          </div>
+          <div class="col">
+            {{ expense_rpt.amount | currency }}
+          </div>
+        </div> 
+
+
+  <div class="row col-odd">
+          <div class="col col-33 col-offset-33">
+            Total
+          </div>
+          
+          <div class="col">
+            {{ 8798.89 | currency }}
+          </div>
+        </div>		
+	</ion-content>
+</ion-view>

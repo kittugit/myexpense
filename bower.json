@@ -1,0 +1,11 @@
+{
+  "name": "myexpense",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.14"
+  },
+  "dependencies": {
+    "tc-angular-chartjs": "~1.0.9",
+    "ionicons": "~2.0.0"
+  }
+}

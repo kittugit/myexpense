@@ -1,0 +1,18 @@
+/* Empty. Add your own CSS if you like */
+.col {
+ 
+ 
+ font-size: 1em;
+font-family: Lucida Console 
+}
+
+.col-even{
+color: black; 
+   background-color: white;
+}
+
+.col-odd{
+	color: white;
+   background-color: teal;
+}
+ 

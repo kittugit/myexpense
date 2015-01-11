@@ -1,0 +1,15 @@
+<ion-view title="Expenses">
+  <ion-content>
+  <br>
+    <ion-list>
+      <ion-item class="item item-icon-left" ng-repeat="(key, value) in categorizedExpenses" type="item-text-wrap" href="#/tab/expenses/{{key}}">
+	  
+	  <i class="icon ion-pricetags"></i>
+    {{key}}
+    <span class="badge badge-assertive">{{value}}</span>
+	
+          
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

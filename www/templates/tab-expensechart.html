@@ -1,0 +1,21 @@
+<ion-view view-title="Expense Chart">
+  <ion-content padding="true">
+  
+
+  <label class="item item-input item-select">
+    <div class="input-label">
+      Expense Sheet
+    </div>	
+	
+	<select ng-model="exp.sheet_id" ng-change="showChart(exp.sheet_id)" ng-options="sheet.id as sheet.name for sheet in sheets">
+	<option value="">-- choose sheet --</option>
+	</select>
+</label> 
+ 
+<br> 
+ 
+ <canvas tc-chartjs-doughnut chart-options="options" chart-data="data" auto-legend></canvas>
+
+ 	
+  </ion-content>
+</ion-view>

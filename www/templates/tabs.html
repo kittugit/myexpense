@@ -1,0 +1,29 @@
+<!--
+Create tabs with an icon and label, using the tabs-positive style.
+Each tab's child <ion-nav-view> directive will have its own
+navigation history that also transitions its views in and out.
+-->
+<ion-tabs class="tabs-icon-top tabs-color-active-positive tabs-positive">
+
+<ion-tab title="Expense" icon-off="ion-social-usd-outline" icon-on="ion-social-usd" href="#/tab/expense">
+    <ion-nav-view name="tab-expense"></ion-nav-view>
+  </ion-tab>
+  
+  <ion-tab title="Expense List" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/expenselist">
+    <ion-nav-view name="tab-expenselist"></ion-nav-view>
+  </ion-tab>
+  
+  
+  <ion-tab title="Expense Chart" icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/expensechart">
+    <ion-nav-view name="tab-expensechart"></ion-nav-view>
+  </ion-tab>
+  
+  <!-- Account Tab -->
+  <ion-tab title="Sheet" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/sheet" >
+    <ion-nav-view name="tab-sheet"></ion-nav-view>
+  </ion-tab>
+
+  <ion-tab title="Category" icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/category" >
+    <ion-nav-view name="tab-category"></ion-nav-view>
+  </ion-tab>
+  </ion-tabs>

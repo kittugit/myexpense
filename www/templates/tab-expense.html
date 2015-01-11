@@ -1,0 +1,45 @@
+<ion-view view-title="Expense">
+  <ion-content padding="true">
+
+<label class="item item-input item-select">
+    <div class="input-label">
+      Expense Sheet
+    </div>	
+	
+	<select ng-model="expense.sheet_id" ng-options="sheet.id as sheet.name for sheet in sheets">
+	<option value="">-- choose sheet --</option>
+	</select>
+</label>   
+
+<label class="item item-input item-select">
+    <div class="input-label">
+      Category
+    </div>	
+	<select ng-model="expense.category_id" ng-options="category.id as category.name for category in categories">
+	
+	</select>
+
+</label> 
+
+<label class="item item-input">
+  <div class="input-label">Date</div>
+  <input type="date" ng-model="expense.date">
+</label>
+
+<label class="item item-input">
+  <div class="input-label">Description</div>
+  <input type="text" ng-model="expense.description">
+</label>
+
+<label class="item item-input">
+<div class="input-label">Amount</div>
+    <input type="number" ng-model="expense.amount">
+</label>
+
+
+<button class="button button-block button-positive" data-ng-click="add(expense)">
+  Save
+</button>
+	
+  </ion-content>
+</ion-view>
