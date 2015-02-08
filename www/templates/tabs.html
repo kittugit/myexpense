@@ -6,16 +6,16 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-color-active-positive tabs-positive">
 
 <ion-tab title="Expense" icon-off="ion-social-usd-outline" icon-on="ion-social-usd" href="#/tab/expense">
-    <ion-nav-view name="tab-expense"></ion-nav-view>
+    <ion-nav-view nav-transition="ios" nav-direction="forward" name="tab-expense"></ion-nav-view>
   </ion-tab>
   
   <ion-tab title="Expense List" icon-off="ion-ios-list-outline" icon-on="ion-ios-list" href="#/tab/expenselist">
-    <ion-nav-view name="tab-expenselist"></ion-nav-view>
+    <ion-nav-view nav-transition="android" nav-direction="swap" name="tab-expenselist"></ion-nav-view>
   </ion-tab>
   
   
   <ion-tab title="Expense Chart" icon-off="ion-ios-pie-outline" icon-on="ion-ios-pie" href="#/tab/expensechart">
-    <ion-nav-view name="tab-expensechart"></ion-nav-view>
+    <ion-nav-view name="tab-expensechart" nav-direction="enter"></ion-nav-view>
   </ion-tab>
   
   <!-- Account Tab -->

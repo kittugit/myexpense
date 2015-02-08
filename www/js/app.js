@@ -6,16 +6,17 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-angular.module('starter', ['ionic', 'starter.controllers', 'starter.api', 'ngCordova', 'tc.chartjs'])
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.api', 'ngCordova', 'tc.chartjs', 'ngMessages'])
 
-.run(function($ionicPlatform, $cordovaSQLite, $rootScope, Categories, Sheet) {
+.run(function($ionicPlatform, $cordovaSQLite, $rootScope, Categories, Sheet, Expense) {
   $ionicPlatform.ready(function() {
    if(navigator && navigator.splashscreen){
    		navigator.splashscreen.hide();
    }
-   Categories.init();
+    
+  Categories.init();
 	Sheet.init();
-   
+  Expense.init();
 	
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)

@@ -1,30 +1,39 @@
 <ion-view view-title="Expense">
   <ion-content padding="true">
 
+  <div style="padding-top: 20px">&nbsp;</div>
+
+<form name="expenseForm" novalidate="" data-ng-submit="add(expenseForm, expense)">
 <label class="item item-input item-select">
     <div class="input-label">
       Expense Sheet
     </div>	
 	
-	<select ng-model="expense.sheet_id" ng-options="sheet.id as sheet.name for sheet in sheets">
+	<select ng-model="expense.sheet_id" name="sheet_id" ng-options="sheet.id as sheet.name for sheet in sheets" required>
 	<option value="">-- choose sheet --</option>
 	</select>
 </label>   
+
+
 
 <label class="item item-input item-select">
     <div class="input-label">
       Category
     </div>	
-	<select ng-model="expense.category_id" ng-options="category.id as category.name for category in categories">
+	<select ng-model="expense.category_id" name="category_id" ng-options="category.id as category.name for category in categories" required>
 	
 	</select>
 
 </label> 
 
+
+
 <label class="item item-input">
   <div class="input-label">Date</div>
-  <input type="date" ng-model="expense.date">
+  <input type="date" name="date" ng-model="expense.date" required>
 </label>
+
+
 
 <label class="item item-input">
   <div class="input-label">Description</div>
@@ -33,13 +42,27 @@
 
 <label class="item item-input">
 <div class="input-label">Amount</div>
-    <input type="number" ng-model="expense.amount">
+    <input type="number" name='amount' ng-model="expense.amount" min="0.1" required>
 </label>
 
 
-<button class="button button-block button-positive" data-ng-click="add(expense)">
+    <div class="row" ng-messages="expenseForm.sheet_id.$error" ng-if="expenseForm.$submitted">
+        <div class="col" style="color:red" ng-message="required">Sheet is required</div>      
+    </div>
+    <div class="row" ng-messages="expenseForm.category_id.$error" ng-if="expenseForm.$submitted">
+        <div class="col" style="color:red" ng-message="required">Category is required</div>      
+    </div>
+    <div class="row" ng-messages="expenseForm.date.$error" ng-if="expenseForm.$submitted">
+          <div class="col" style="color:red" ng-message="required">Date is required</div>      
+    </div>
+    <div class="row" ng-messages="expenseForm.amount.$error" ng-if="expenseForm.$submitted" ng-messages-multiple>
+      <div class="col" style="color:red" ng-message="required">Amount is required</div>  
+      <div class="col" style="color:red" ng-message="min">Amount should not be zero</div>    
+    </div>
+
+<button type="submit" class="button button-block button-positive">
   Save
 </button>
-	
+</form>	
   </ion-content>
 </ion-view>

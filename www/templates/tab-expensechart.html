@@ -14,7 +14,19 @@
  
 <br> 
  
- <canvas tc-chartjs-doughnut chart-options="options" chart-data="data" auto-legend></canvas>
+ <canvas tc-chartjs-doughnut chart-options="chart.options" chart-data="chart.data"></canvas>
+
+
+  <div class="row" ng-repeat="chartitem in chart.data">
+          <div class="col col-75" style="background-color: {{chartitem.color}}">
+         {{ chartitem.label}}
+
+          </div>
+          <div class="col" style="background-color: {{chartitem.color}}">
+            {{ chartitem.value}}
+          </div>
+                  
+        </div> 
 
  	
   </ion-content>

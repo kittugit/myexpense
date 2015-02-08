@@ -2,28 +2,28 @@
   <ion-content padding="true">
   
   <ion-list>
-  
+  <form name="sheetForm" novalidate="" ng-submit="add(newsheet.name)">
    <ion-item class="item item-input-inset">
    
    	   <label class="item-input-wrapper">
 	   
-      <input type="text" ng-model="newsheet.name" placeholder="{{placeholder}}">
+      <input type="text" name="new_sheet" ng-model="newsheet.name" placeholder="{{placeholder}}" required ng-minlength="3">
     </label>
-    <button class="button button-positive" ng-click="add(newsheet.name)">
+    <button type="submit" class="button button-positive" ng-disabled='sheetForm.$invalid'>
       <i class="icon ion-checkmark"></i>
     </button>
               
   </ion-item>
+  </form>
    
-  <ion-item  ng-repeat="sheet in sheets" class="item-button-right">
-  {{sheet.name}}
-      
-			  
-              <button class="button button-assertive" ng-click="remove(sheet.id)">
-                  <i class="icon ion-close"></i>
-              </button>
-  </ion-item>
-  </ion-list>
+ </ion-list>
   	
+
+    <div class="row" ng-repeat="sheet in sheets" ng-class-odd="'col-odd'" ng-class-even="'col-even'">
+      <div class="col">
+        <a ng-click="remove(sheet.id)" style="color: tomato; font-size: 20px;"> <i class="icon ion-trash-a"></i> </a>
+        {{sheet.name}}
+      <div>
+   </div>
   </ion-content>
 </ion-view>

@@ -2,28 +2,29 @@
   <ion-content padding="true">
   
   <ion-list>
-  
+  <form name="catForm" novalidate="" ng-submit="add(newcategory.name)">
    <ion-item class="item item-input-inset">
+   
    
    	   <label class="item-input-wrapper">
 	   
-      <input type="text" ng-model="newcategory.name" placeholder="{{placeholder}}">
+      <input type="text" name="new_cat" ng-model="newcategory.name" placeholder="{{placeholder}}" required ng-minlength="3">
     </label>
-    <button class="button button-positive" ng-click="add(newcategory.name)">
+
+    <button  type="submit" class="button button-positive" ng-disabled='catForm.$invalid'>
       <i class="icon ion-checkmark"></i>
     </button>
-              
+    
+    
   </ion-item>
-   
-  <ion-item  ng-repeat="category in categories" class="item-button-right">
-  {{category.name}}
-      
-			  
-              <button class="button button-assertive" ng-click="remove(category.id)">
-                  <i class="icon ion-close"></i>
-              </button>
-  </ion-item>
-  </ion-list>
-  	
+   </form>          
+  
+  </ion-list>  	
+     <div class="row" ng-repeat="category in categories" ng-class-odd="'col-odd'" ng-class-even="'col-even'">
+      <div class="col">
+        <a ng-click="remove(category.id)"  style="color: tomato; font-size: 20px;"> <i class="icon ion-trash-a"></i> </a>
+        {{category.name}}
+      <div>
+   </div>
   </ion-content>
 </ion-view>
